@@ -1,0 +1,273 @@
+.trackerContainer {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    margin-bottom: 3rem;
+  }
+  
+  .trackerHeader {
+    padding: 2rem;
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+  }
+  
+  .trackerHeader h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .trackerHeader p {
+    opacity: 0.8;
+    margin-bottom: 0;
+  }
+  
+  .habitsTable {
+    padding: 2rem;
+  }
+  
+  .tableHeader {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    color: var(--primary);
+  }
+  
+  .habitRow {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f3f3f3;
+  }
+  
+  .habitName {
+    font-weight: 500;
+  }
+  
+  .habitFrequency, .habitSpending {
+    text-align: center;
+  }
+  
+  .addHabitForm {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr auto;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    align-items: center;
+  }
+  
+  .habitInput {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .habitInput:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+  
+  .addButton {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .addButton:hover {
+    background-color: #2a75e8;
+    transform: translateY(-2px);
+  }
+  
+  .spendingSummary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .summaryItem h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .spendingAmount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0;
+  }
+  
+  .insightPanel {
+    padding: 2rem;
+    background-color: rgba(58, 134, 255, 0.05);
+  }
+  
+  .insightPanel h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .insightPanel i {
+    color: var(--secondary);
+  }
+  
+  .insightPanel ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  .insightPanel li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  
+  .insightPanel li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .disclaimer {
+    padding: 1rem 2rem;
+    color: var(--light-text);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 0;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+  }
+  
+  .offerBox {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  .offerContent {
+    padding: 2.5rem;
+  }
+  
+  .offerContent h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+  
+  .offerBenefits {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+  
+  .offerBenefits li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .offerBenefits i {
+    color: #2ecc71;
+    font-size: 1.2rem;
+  }
+  
+  .limitedSpots {
+    background-color: #ffecb3;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .limitedSpots p {
+    color: #b7791f;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  
+  .offerCta {
+    padding: 2rem;
+    background-color: #f8f9fa;
+    text-align: center;
+    border-top: 1px solid #eee;
+  }
+  
+  @media (max-width: 768px) {
+    .tableHeader, .habitRow, .addHabitForm {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+    
+    .addHabitForm {
+      grid-template-columns: 1fr;
+    }
+    
+    .spendingSummary {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .tableHeader, .habitRow {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      text-align: left;
+      padding: 0.5rem 0;
+    }
+    
+    .habitFrequency, .habitSpending {
+      text-align: left;
+    }
+    
+    .tableHeader {
+      display: none;
+    }
+    
+    .habitRow {
+      border: 1px solid #eee;
+      border-radius: 5px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .habitName::before {
+      content: "Behavior: ";
+      font-weight: normal;
+      color: var(--light-text);
+    }
+    
+    .habitFrequency::before {
+      content: "Frequency: ";
+      font-weight: normal;
+      color: var(--light-text);
+    }
+    
+    .habitSpending::before {
+      content: "Spending: ";
+      font-weight: normal;
+      color: var(--light-text);
+    }
+  }
