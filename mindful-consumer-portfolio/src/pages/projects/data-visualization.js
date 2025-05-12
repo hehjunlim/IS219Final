@@ -49,9 +49,9 @@ export default function DataVisualization() {
 
   const keyTakeaways = [
     {
-      icon: "fas fa-lightbulb",
-      heading: "Simplified Purchasing",
-      description: "E-commerce platforms have removed friction from the buying process, leading to more frequent and impulsive purchases."
+      icon: "fas fa-chart-line",
+      heading: "E-Commerce Growth",
+      description: "Online shopping has grown from less than 1% of total retail in 2000 to over 16% by 2023."
     },
     {
       icon: "fas fa-money-bill-wave",
@@ -59,9 +59,9 @@ export default function DataVisualization() {
       description: "The data shows a clear correlation between increased e-commerce activity and higher average credit card balances."
     },
     {
-      icon: "fas fa-balance-scale",
-      heading: "Mindfulness Opportunity",
-      description: "Understanding these patterns creates an opportunity for more mindful digital consumption decisions."
+      icon: "fas fa-shopping-cart",
+      heading: "Purchasing Frequency",
+      description: "Consumers now make purchases 7x more frequently than before the e-commerce boom."
     }
   ];
 
@@ -83,45 +83,6 @@ export default function DataVisualization() {
           title="Visualization Features"
           features={visualizationFeatures}
         />
-        
-        <section className={styles.insightsSection}>
-          <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Key Insights</h2>
-            <div className={styles.insightsGrid}>
-              <div className={styles.insightCard}>
-                <div className={styles.insightIcon}>
-                  <i className="fas fa-chart-line"></i>
-                </div>
-                <h3>E-commerce Growth</h3>
-                <p>Online shopping has grown from less than 1% of total retail in 2000 to over 16% by 2023.</p>
-              </div>
-              
-              <div className={styles.insightCard}>
-                <div className={styles.insightIcon}>
-                  <i className="fas fa-credit-card"></i>
-                </div>
-                <h3>Credit Card Impact</h3>
-                <p>Average monthly credit card spending has increased from $500 to over $5,000 as e-commerce has become more popular.</p>
-              </div>
-              
-              <div className={styles.insightCard}>
-                <div className={styles.insightIcon}>
-                  <i className="fas fa-shopping-cart"></i>
-                </div>
-                <h3>Purchasing Frequency</h3>
-                <p>Consumers now make purchases 7x more frequently than before the e-commerce boom.</p>
-              </div>
-              
-              <div className={styles.insightCard}>
-                <div className={styles.insightIcon}>
-                  <i className="fas fa-virus"></i>
-                </div>
-                <h3>Pandemic Acceleration</h3>
-                <p>COVID-19 compressed approximately five years of e-commerce growth into just a few months.</p>
-              </div>
-            </div>
-          </div>
-        </section>
         
         <section className={styles.visualizationSection}>
           <div className={styles.container}>
