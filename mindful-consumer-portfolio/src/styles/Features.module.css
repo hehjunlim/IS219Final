@@ -1,0 +1,82 @@
+.featuresSection {
+    padding: 4rem 0;
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+  
+  .featuresList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .featureItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .featureItem:hover {
+    transform: translateX(10px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .featureIcon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: #f0f7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+  }
+  
+  .featureIcon i {
+    font-size: 1.5rem;
+    color: #4a90e2;
+  }
+  
+  .featureContent {
+    flex: 1;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .featureContent strong {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 768px) {
+    .sectionTitle {
+      font-size: 2rem;
+    }
+    
+    .featureItem {
+      padding: 1rem;
+    }
+    
+    .featureIcon {
+      width: 40px;
+      height: 40px;
+      margin-right: 1rem;
+    }
+    
+    .featureIcon i {
+      font-size: 1.2rem;
+    }
+  }

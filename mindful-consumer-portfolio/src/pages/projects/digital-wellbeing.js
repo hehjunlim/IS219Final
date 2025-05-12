@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Benefits from '../../components/Benefits';
+import Features from '../../components/Features';
 import styles from '../../styles/Project.module.css';
 import wellbeingStyles from '../../styles/Wellbeing.module.css';
 import ProjectHeader from '../../components/ProjectHeader';
@@ -17,6 +18,29 @@ export default function DigitalWellbeing() {
     dataSources: ["Habit Formation Psychology", "Digital Wellbeing Research", "Behavioral Economics"],
     timeline: "Completed in Winter 2024"
   };
+
+  const wellbeingFeatures = [
+    {
+      icon: "fas fa-clipboard-list",
+      heading: "Habit Tracking",
+      description: "Log your online shopping behaviors including browsing, adding to cart, and purchase actions."
+    },
+    {
+      icon: "fas fa-chart-line",
+      heading: "Spending Visualization",
+      description: "See patterns in your digital consumption and identify high-spending categories and triggers."
+    },
+    {
+      icon: "fas fa-lightbulb",
+      heading: "Mindfulness Recommendations",
+      description: "Receive personalized suggestions for reducing problematic consumption patterns."
+    },
+    {
+      icon: "fas fa-medal",
+      heading: "Progress Tracking",
+      description: "Monitor improvements in your spending habits over time with weekly and monthly reports."
+    }
+  ];
 
   const wellbeingBenefits = [
     {
@@ -96,45 +120,10 @@ export default function DigitalWellbeing() {
       <main>
         <ProjectHeader {...projectData} />
         
-        <section className="section">
-          <div className="container">
-            <div className={styles.projectInfo}>
-              <div className={styles.projectDescription}>
-                <h2>Key Features</h2>
-                <ul className={styles.insightsList}>
-                  <li>
-                    <i className="fas fa-clipboard-list"></i>
-                    <div>
-                      <strong>Habit Tracking:</strong> Log your online shopping behaviors including 
-                      browsing, adding to cart, and purchase actions.
-                    </div>
-                  </li>
-                  <li>
-                    <i className="fas fa-chart-line"></i>
-                    <div>
-                      <strong>Spending Visualization:</strong> See patterns in your digital consumption
-                      and identify high-spending categories and triggers.
-                    </div>
-                  </li>
-                  <li>
-                    <i className="fas fa-lightbulb"></i>
-                    <div>
-                      <strong>Mindfulness Recommendations:</strong> Receive personalized suggestions
-                      for reducing problematic consumption patterns.
-                    </div>
-                  </li>
-                  <li>
-                    <i className="fas fa-medal"></i>
-                    <div>
-                      <strong>Progress Tracking:</strong> Monitor improvements in your spending habits
-                      over time with weekly and monthly reports.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Features 
+          title="Key Features"
+          features={wellbeingFeatures}
+        />
         
         <section className="section" style={{ background: '#f8f9fa' }}>
           <div className="container">

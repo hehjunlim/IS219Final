@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ShoppingAssistant from '../../components/ShoppingAssistant';
 import Benefits from '../../components/Benefits';
-import Testimonials from '../../components/Testimonials';
+import Features from '../../components/Features';
 import styles from '../../styles/Project.module.css';
 import ProjectHeader from '../../components/ProjectHeader';
 
@@ -20,6 +20,29 @@ export default function AIAssistant() {
         timeline: "Completed in Spring 2024"
     };
 
+    const assistantFeatures = [
+        {
+            icon: "fas fa-robot",
+            heading: "AI-Powered Questions",
+            description: "Intelligent questions that help you reflect on the true need and value of potential purchases."
+        },
+        {
+            icon: "fas fa-calculator",
+            heading: "Budget Analysis",
+            description: "Evaluates whether purchases align with your financial goals and current budget constraints."
+        },
+        {
+            icon: "fas fa-clock",
+            heading: "Cooling-Off Period",
+            description: "Introduces a mindful pause between desire and purchase to reduce impulsive buying."
+        },
+        {
+            icon: "fas fa-chart-pie",
+            heading: "Personalized Insights",
+            description: "Provides tailored recommendations based on your spending patterns and personal values."
+        }
+    ];
+
     const assistantBenefits = [
         {
             icon: "fas fa-brain",
@@ -30,6 +53,11 @@ export default function AIAssistant() {
             icon: "fas fa-piggy-bank",
             heading: "Saves Money",
             description: "Users report saving an average of $120 per month by avoiding unnecessary purchases after using the assistant."
+        },
+        {
+            icon: "fas fa-balance-scale",
+            heading: "Aligns Values & Actions",
+            description: "Helps ensure your spending decisions reflect your authentic values and priorities rather than momentary impulses."
         },
         {
             icon: "fas fa-heart",
@@ -50,7 +78,13 @@ export default function AIAssistant() {
             <Navbar />
             
             <main>
-                <ProjectHeader {...projectData} />     
+                <ProjectHeader {...projectData} />
+                
+                <Features 
+                    title="How It Works"
+                    features={assistantFeatures}
+                />
+                     
                 <section className="section" style={{ background: '#f8f9fa' }}>
                     <div className="container">
                         <h2 className={styles.sectionTitle}>Try the AI Assistant</h2>
@@ -60,7 +94,13 @@ export default function AIAssistant() {
                         </p>
                         
                         <ShoppingAssistant />
-                    
+                        
+                        <div className={styles.disclaimer}>
+                            <p>
+                                <strong>Note:</strong> This is a simplified demo version of the AI assistant. A more
+                                advanced version would incorporate machine learning to provide more personalized recommendations.
+                            </p>
+                        </div>
                     </div>
                 </section>
                 
@@ -69,8 +109,41 @@ export default function AIAssistant() {
                     benefits={assistantBenefits}
                 />
                 
-                {/* User Experiences - using Testimonials component */}
-                <Testimonials />
+                {/* Social proof - Cialdini principle */}
+                <section className="section" style={{ background: '#f1f9ff' }}>
+                    <div className="container">
+                        <h2 className={styles.sectionTitle}>User Experiences</h2>
+                        <div className={styles.testimonialsContainer}>
+                            <div className={styles.testimonialCard}>
+                                <div className={styles.quoteIcon}>
+                                    <i className="fas fa-quote-left"></i>
+                                </div>
+                                <p>
+                                    "I was surprised by how effectively this assistant helped me distinguish between wants and needs. 
+                                    Since I started using it, I've reduced my online impulse purchases by about 70%."
+                                </p>
+                                <div className={styles.testimonialAuthor}>
+                                    <p className={styles.authorName}>Michael L.</p>
+                                    <p>Saved $450 in 3 months</p>
+                                </div>
+                            </div>
+                            
+                            <div className={styles.testimonialCard}>
+                                <div className={styles.quoteIcon}>
+                                    <i className="fas fa-quote-left"></i>
+                                </div>
+                                <p>
+                                    "As someone who struggles with retail therapy, this tool has been like having a 
+                                    mindful friend who asks the right questions before I hit the buy button."
+                                </p>
+                                <div className={styles.testimonialAuthor}>
+                                    <p className={styles.authorName}>Jamie K.</p>
+                                    <p>Reduced credit card debt by 25%</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 
                 <section className={styles.ctaSection}>
                     <div className="container">

@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import ProjectHeader from '../../components/ProjectHeader';
 import OverconsumptionViz from '../../components/OverconsumptionViz';
 import Benefits from '../../components/Benefits';
+import Features from '../../components/Features';
 import styles from '../../styles/Project.module.css';
 
 export default function DataVisualization() {
@@ -23,6 +24,29 @@ export default function DataVisualization() {
     timeline: "Completed in Spring 2024"
   };
 
+  const visualizationFeatures = [
+    {
+      icon: "fas fa-chart-line",
+      heading: "Interactive Timeline",
+      description: "Explore 20 years of e-commerce growth alongside consumer credit card debt trends."
+    },
+    {
+      icon: "fas fa-mouse-pointer",
+      heading: "Hover Insights",
+      description: "Reveal detailed information about specific data points, milestones, and key events."
+    },
+    {
+      icon: "fas fa-sync",
+      heading: "Real-Time Correlation",
+      description: "See how changes in e-commerce adoption directly impact consumer debt patterns."
+    },
+    {
+      icon: "fas fa-landmark",
+      heading: "Historical Milestones",
+      description: "Discover how major companies and events shaped the online shopping landscape."
+    }
+  ];
+
   const keyTakeaways = [
     {
       icon: "fas fa-lightbulb",
@@ -33,6 +57,11 @@ export default function DataVisualization() {
       icon: "fas fa-money-bill-wave",
       heading: "Debt Correlation",
       description: "The data shows a clear correlation between increased e-commerce activity and higher average credit card balances."
+    },
+    {
+      icon: "fas fa-brain",
+      heading: "Psychological Factors",
+      description: "Digital payment methods create psychological distance from money, making it easier to spend more than intended."
     },
     {
       icon: "fas fa-balance-scale",
@@ -54,6 +83,11 @@ export default function DataVisualization() {
       
       <main>
         <ProjectHeader {...projectData} />
+        
+        <Features 
+          title="Visualization Features"
+          features={visualizationFeatures}
+        />
         
         <section className={styles.insightsSection}>
           <div className={styles.container}>
