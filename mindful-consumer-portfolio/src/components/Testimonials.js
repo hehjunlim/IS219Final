@@ -24,19 +24,19 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className={styles.testimonialSection}>
-      <div className="container">
-        <h2 className={styles.sectionTitle}>What People Are Saying</h2>
-        <div className={styles.testimonialGrid}>
+    <section className={styles.testimonialsSection}>
+      <div className="global-container">
+        <h2 className={styles.testimonialsSectionTitle}>What People Are Saying</h2>
+        <div className={styles.testimonialsGrid}>
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className={styles.testimonialCard}>
-              <div className={styles.quoteIcon}>
+              <div className={styles.testimonialQuoteIcon}>
                 <i className="fas fa-quote-left"></i>
               </div>
               <p className={styles.testimonialText}>{testimonial.text}</p>
               <div className={styles.testimonialAuthor}>
-                <p className={styles.authorName}>{testimonial.name}</p>
-                <p className={styles.authorTitle}>{testimonial.title}</p>
+                <p className={styles.testimonialAuthorName}>{testimonial.name}</p>
+                <p className={styles.testimonialAuthorTitle}>{testimonial.title}</p>
               </div>
             </div>
           ))}

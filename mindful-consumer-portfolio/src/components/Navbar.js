@@ -13,49 +13,49 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
+      <div className={styles.navbarContainer}>
+        <Link href="/" className={styles.navbarLogo}>
           Mindful Consumer
         </Link>
         
-        <div className={styles.menuIcon} onClick={toggleMenu}>
-          <div className={`${styles.bar} ${isOpen ? styles.change : ''}`}></div>
-          <div className={`${styles.bar} ${isOpen ? styles.change : ''}`}></div>
-          <div className={`${styles.bar} ${isOpen ? styles.change : ''}`}></div>
+        <div className={styles.navbarMenuIcon} onClick={toggleMenu}>
+          <div className={`${styles.navbarBar} ${isOpen ? styles.change : ''}`}></div>
+          <div className={`${styles.navbarBar} ${isOpen ? styles.change : ''}`}></div>
+          <div className={`${styles.navbarBar} ${isOpen ? styles.change : ''}`}></div>
         </div>
         
-        <ul className={`${styles.navMenu} ${isOpen ? styles.active : ''}`}>
-          <li className={styles.navItem}>
+        <ul className={`${styles.navbarMenu} ${isOpen ? styles.active : ''}`}>
+          <li className={styles.navbarItem}>
             <Link 
               href="/" 
-              className={`${styles.navLink} ${router.pathname === '/' ? styles.active : ''}`}
+              className={`${styles.navbarLink} ${router.pathname === '/' ? styles.active : ''}`}
               onClick={() => setIsOpen(false)}
             >
               Home
             </Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navbarItem}>
             <Link 
               href="/about" 
-              className={`${styles.navLink} ${router.pathname === '/about' ? styles.active : ''}`}
+              className={`${styles.navbarLink} ${router.pathname === '/about' ? styles.active : ''}`}
               onClick={() => setIsOpen(false)}
             >
               About
             </Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navbarItem}>
             <Link 
               href="/projects" 
-              className={`${styles.navLink} ${router.pathname.startsWith('/projects') ? styles.active : ''}`}
+              className={`${styles.navbarLink} ${router.pathname.startsWith('/projects') ? styles.active : ''}`}
               onClick={() => setIsOpen(false)}
             >
               Projects
             </Link>
           </li>
-          <li className={styles.navItem}>
+          <li className={styles.navbarItem}>
             <Link 
               href="/contact" 
-              className={`${styles.navLink} ${router.pathname === '/contact' ? styles.active : ''}`}
+              className={`${styles.navbarLink} ${router.pathname === '/contact' ? styles.active : ''}`}
               onClick={() => setIsOpen(false)}
             >
               Contact

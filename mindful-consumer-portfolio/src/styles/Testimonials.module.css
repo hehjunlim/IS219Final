@@ -1,17 +1,19 @@
-.testimonialSection {
+/* Testimonials.module.css - Testimonials component styles */
+
+.testimonialsSection {
     background-color: #f1f9ff;
-    padding: 5rem 0;
+    padding: var(--spacing-3xl) 0;
   }
   
-  .sectionTitle {
+  .testimonialsSectionTitle {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: var(--spacing-2xl);
     color: var(--primary);
     position: relative;
-    font-size: 2rem;
+    font-size: var(--font-3xl);
   }
   
-  .sectionTitle::after {
+  .testimonialsSectionTitle::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -20,38 +22,41 @@
     width: 60px;
     height: 3px;
     background-color: var(--secondary);
+    border-radius: var(--radius-sm);
   }
   
-  .testimonialGrid {
+  .testimonialsGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: var(--spacing-xl);
   }
   
   .testimonialCard {
     background-color: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base);
     position: relative;
   }
   
   .testimonialCard:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
   }
   
-  .quoteIcon {
+  .testimonialQuoteIcon {
     color: var(--primary);
-    font-size: 1.5rem;
+    font-size: var(--font-2xl);
     opacity: 0.2;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-md);
   }
   
   .testimonialText {
     font-style: italic;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.7;
+    color: var(--text);
   }
   
   .testimonialAuthor {
@@ -60,23 +65,24 @@
     justify-content: center;
   }
   
-  .authorName {
+  .testimonialAuthorName {
     font-weight: 600;
     color: var(--primary);
-    margin-bottom: 0.25rem;
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-lg);
   }
   
-  .authorTitle {
+  .testimonialAuthorTitle {
     color: var(--light-text);
-    font-size: 0.9rem;
+    font-size: var(--font-sm);
   }
   
   @media (max-width: 768px) {
-    .testimonialGrid {
+    .testimonialsGrid {
       grid-template-columns: 1fr;
     }
     
-    .sectionTitle {
-      font-size: 1.75rem;
+    .testimonialsSectionTitle {
+      font-size: var(--font-2xl);
     }
   }

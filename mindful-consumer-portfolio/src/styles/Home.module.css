@@ -1,12 +1,70 @@
-.sectionTitle {
-  text-align: center;
-  margin-bottom: 2.5rem;
-  color: var(--primary);
-  position: relative;
-  font-size: 2rem;
+/* Home.module.css - Home page specific styles */
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.sectionTitle::after {
+/* Hero section */
+.homeHero {
+  background: var(--hero-gradient);
+  color: white;
+  padding: var(--spacing-4xl) 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.homeHero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15%;
+  background: linear-gradient(to top, var(--background), transparent);
+}
+
+.homeHeroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.homeHeroTitle {
+  font-size: var(--font-5xl);
+  margin-bottom: var(--spacing-lg);
+  animation: fadeInUp 0.8s ease;
+}
+
+.homeHeroDescription {
+  font-size: var(--font-xl);
+  margin-bottom: var(--spacing-xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 0.8s ease 0.2s;
+  animation-fill-mode: backwards;
+}
+
+/* Stats section */
+.homeStatsSection {
+  padding: var(--spacing-3xl) 0;
+  background-color: white;
+}
+
+.homeSectionTitle {
+  text-align: center;
+  font-size: var(--font-3xl);
+  color: var(--primary);
+  margin-bottom: var(--spacing-2xl);
+  position: relative;
+}
+
+.homeSectionTitle::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -15,72 +73,204 @@
   width: 60px;
   height: 3px;
   background-color: var(--secondary);
+  border-radius: var(--radius-sm);
 }
 
-.stats {
+.homeStatsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
 }
 
-.statCard {
+.homeStatCard {
   background-color: white;
-  border-radius: 8px;
-  padding: 2rem;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-xl);
   text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base);
 }
 
-.statCard:hover {
+.homeStatCard:hover {
   transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
-.statCard h3 {
-  font-size: 2.5rem;
+.homeStatNumber {
+  font-size: var(--font-4xl);
   color: var(--primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
 }
 
-.authorityText {
+.homeStatText {
+  color: var(--light-text);
+  font-size: var(--font-base);
+}
+
+.homeAuthorityText {
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: var(--font-lg);
   font-weight: 500;
+  color: var(--text);
+  line-height: 1.7;
 }
 
-.ctaSection {
+/* Projects section */
+.homeProjectsSection {
+  padding: var(--spacing-3xl) 0;
+  background-color: #f1f5f9;
+}
+
+.homeProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.homeProjectCard {
+  background: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: inherit;
+}
+
+.homeProjectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.homeProjectCardImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.homeProjectCardBody {
+  padding: var(--spacing-lg);
+}
+
+.homeProjectCardTitle {
+  color: var(--primary);
+  font-size: var(--font-2xl);
+  margin-bottom: var(--spacing-md);
+}
+
+.homeProjectCardText {
+  color: var(--light-text);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.homeProjectCardButton {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background-color: var(--primary);
+  color: white;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: all var(--transition-base);
+}
+
+.homeProjectCardButton:hover {
+  background-color: #2a75e8;
+  transform: translateY(-2px);
+}
+
+/* Resources section */
+.homeResourcesSection {
+  padding: var(--spacing-3xl) 0;
+  background-color: white;
+}
+
+.homeResourceBox {
+  background-color: rgba(58, 134, 255, 0.1);
+  border-left: 4px solid var(--primary);
+  padding: var(--spacing-xl);
+  margin: 0 auto;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  max-width: 800px;
+}
+
+.homeResourceBox h3 {
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+  font-size: var(--font-2xl);
+}
+
+.homeResourceBox p {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.7;
+}
+
+/* CTA section */
+.homeCtaSection {
   background: var(--hero-gradient);
   color: white;
-  padding: 5rem 0;
+  padding: var(--spacing-4xl) 0;
   text-align: center;
 }
 
-.ctaSection h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+.homeCtaTitle {
+  font-size: var(--font-4xl);
+  margin-bottom: var(--spacing-md);
 }
 
-.ctaSection p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+.homeCtaText {
+  font-size: var(--font-xl);
+  margin-bottom: var(--spacing-xl);
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .stats {
+  .homeHeroTitle {
+    font-size: var(--font-4xl);
+  }
+  
+  .homeStatsGrid {
     grid-template-columns: 1fr;
   }
   
-  .ctaSection h2 {
-    font-size: 2rem;
+  .homeProjectsGrid {
+    grid-template-columns: 1fr;
   }
   
-  .sectionTitle {
-    font-size: 1.75rem;
+  .homeCtaTitle {
+    font-size: var(--font-3xl);
+  }
+}
+
+@media (max-width: 576px) {
+  .homeHeroTitle {
+    font-size: var(--font-3xl);
+  }
+  
+  .homeHeroDescription {
+    font-size: var(--font-lg);
+  }
+  
+  .homeSectionTitle {
+    font-size: var(--font-2xl);
   }
 }

@@ -4,7 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import styles from '../../styles/Projects.module.css';
+// The correct path to the CSS module
+import styles from '../../styles/Project.module.css';
 
 const projects = [
   {
@@ -47,14 +48,14 @@ export default function Projects() {
       
       <main>
         <section className={styles.projectsHero}>
-          <div className="container">
+          <div className={styles.container}>
             <h1>My Projects</h1>
             <p>Explore tools and visualizations designed to promote mindful digital consumption.</p>
           </div>
         </section>
         
-        <section className="section">
-          <div className="container">
+        <section className={styles.projectsSection}>
+          <div className={styles.container}>
             <div className={styles.projectsGrid}>
               {projects.map((project) => (
                 <div key={project.id} className={styles.projectCard}>
@@ -68,7 +69,7 @@ export default function Projects() {
                     />
                   </div>
                   <div className={styles.projectContent}>
-                    <h3>{project.title}</h3>
+                    <h3 className={styles.projectTitle}>{project.title}</h3>
                     <p>{project.description}</p>
                     
                     <div className={styles.projectTech}>
@@ -79,7 +80,7 @@ export default function Projects() {
                     
                     <p className={styles.projectDetails}>{project.details}</p>
                     
-                    <Link href={`/projects/${project.id}`} className="btn btn-primary">
+                    <Link href={`/projects/${project.id}`} className={styles.projectButton}>
                       View Project
                     </Link>
                   </div>
@@ -89,69 +90,16 @@ export default function Projects() {
           </div>
         </section>
         
-        {/* Authority - Cialdini principle */}
-        <section className={styles.expertiseSection}>
-          <div className="container">
-            <h2>My Expertise in Digital Consumption</h2>
-            <div className={styles.expertiseContent}>
-              <div className={styles.expertiseText}>
-                <p>
-                  With a background in consumer psychology and data visualization, I've developed a unique 
-                  approach to understanding and addressing online consumption patterns.
-                </p>
-                <p>
-                  My research has been featured in publications like Consumer Reports and The Wall Street Journal,
-                  and I've helped hundreds of people develop healthier relationships with online shopping.
-                </p>
-                <p>
-                  Through these projects, I aim to provide practical tools that make mindful digital consumption
-                  accessible to everyone.
-                </p>
-              </div>
-              <div className={styles.expertiseStats}>
-                <div className={styles.statItem}>
-                  <h3>200+</h3>
-                  <p>People helped to reduce impulsive online spending</p>
-                </div>
-                <div className={styles.statItem}>
-                  <h3>$1.2M+</h3>
-                  <p>Estimated consumer savings through mindful shopping decisions</p>
-                </div>
-                <div className={styles.statItem}>
-                  <h3>5+</h3>
-                  <p>Years researching digital consumption patterns</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Reciprocity - Cialdini principle */}
-        <section className="section">
-          <div className="container">
-            <div className="resource-box">
-              <h3>Free Resource: Digital Spending Assessment</h3>
-              <p>
-                Download my free worksheet to assess your current online spending patterns and identify
-                opportunities for more mindful digital consumption. No email required!
-              </p>
-              <Link href="/resources/spending-assessment" className="btn btn-primary">
-                Download Free Assessment
+        <section className={styles.ctaSection}>
+          <div className={styles.container}>
+            <h2>Want to Collaborate?</h2>
+            <p>I'm always interested in partnering with researchers, developers, and organizations
+              focused on promoting mindful digital habits.</p>
+            <div className={styles.ctaButtons}>
+              <Link href="/contact" className={styles.projectButton}>
+                Get in Touch
               </Link>
             </div>
-          </div>
-        </section>
-        
-        <section className={styles.ctaSection}>
-          <div className="container">
-            <h2>Want to Collaborate?</h2>
-            <p>
-              I'm always interested in partnering with researchers, developers, and organizations
-              focused on promoting mindful digital habits.
-            </p>
-            <Link href="/contact" className="btn btn-primary">
-              Get in Touch
-            </Link>
           </div>
         </section>
       </main>

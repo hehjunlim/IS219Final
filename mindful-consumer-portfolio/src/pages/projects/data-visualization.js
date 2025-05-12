@@ -3,15 +3,30 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import ProjectHeader from '../../components/ProjectHeader';
+import OverconsumptionViz from '../../components/OverconsumptionViz';
 import styles from '../../styles/Project.module.css';
-import { OverconsumptionViz } from '../../components/OverconsumptionViz';
 
 export default function DataVisualization() {
+  const projectData = {
+    title: "E-commerce Growth & Credit Card Impact",
+    subtitle: "Interactive data visualization showing how the rise of online shopping has affected consumer credit card debt.",
+    description: "This interactive visualization explores the relationship between the growth of e-commerce and the increase in consumer credit card debt over the past two decades. By examining trends and correlations, we can better understand how online shopping has changed consumer spending habits.",
+    technologies: ["React", "D3.js", "Next.js", "CSS Modules"],
+    dataSources: [
+      "U.S. Census Bureau",
+      "Federal Reserve",
+      "Consumer Financial Protection Bureau",
+      "eMarketer Research"
+    ],
+    timeline: "Completed in Spring 2024"
+  };
+
   return (
     <>
       <Head>
-        <title>E-commerce Growth & Impact | Mindful Digital Consumer</title>
-        <meta name="description" content="Interactive visualization showing the correlation between e-commerce growth and credit card debt." />
+        <title>{projectData.title} | Mindful Digital Consumer</title>
+        <meta name="description" content={projectData.subtitle} />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
       </Head>
@@ -19,104 +34,63 @@ export default function DataVisualization() {
       <Navbar />
       
       <main>
-        <section className={styles.projectHero}>
-          <div className="container">
-            <h1>E-commerce Growth & Credit Card Impact</h1>
-            <p>Interactive data visualization showing how the rise of online shopping has affected consumer credit card debt.</p>
-          </div>
-        </section>
+        <ProjectHeader {...projectData} />
         
-        <section className="section">
-          <div className="container">
-            <div className={styles.projectInfo}>
-              <div className={styles.projectDescription}>
-                <h2>Project Overview</h2>
-                <p>
-                  This interactive visualization explores the relationship between the growth of e-commerce
-                  and the increase in consumer credit card debt over the past two decades. By examining trends
-                  and correlations, we can better understand how online shopping has changed consumer spending habits.
-                </p>
-                
-                <h3>Key Insights</h3>
-                <ul className={styles.insightsList}>
-                  <li>
-                    <i className="fas fa-chart-line"></i>
-                    <div>
-                      <strong>E-commerce Growth:</strong> Online shopping has grown from less than 1% of total retail 
-                      in 2000 to over 16% by 2023.
-                    </div>
-                  </li>
-                  <li>
-                    <i className="fas fa-credit-card"></i>
-                    <div>
-                      <strong>Credit Card Impact:</strong> Average monthly credit card spending has increased 
-                      from $500 to over $5,000 as e-commerce has become more popular.
-                    </div>
-                  </li>
-                  <li>
-                    <i className="fas fa-shopping-cart"></i>
-                    <div>
-                      <strong>Purchasing Frequency:</strong> Consumers now make purchases 7x more frequently than 
-                      before the e-commerce boom.
-                    </div>
-                  </li>
-                  <li>
-                    <i className="fas fa-virus"></i>
-                    <div>
-                      <strong>Pandemic Acceleration:</strong> COVID-19 compressed approximately five years of 
-                      e-commerce growth into just a few months.
-                    </div>
-                  </li>
-                </ul>
+        <section className={styles.insightsSection}>
+          <div className={styles.container}>
+            <h2 className={styles.sectionTitle}>Key Insights</h2>
+            <div className={styles.insightsGrid}>
+              <div className={styles.insightCard}>
+                <div className={styles.insightIcon}>
+                  <i className="fas fa-chart-line"></i>
+                </div>
+                <h3>E-commerce Growth</h3>
+                <p>Online shopping has grown from less than 1% of total retail in 2000 to over 16% by 2023.</p>
               </div>
               
-              <div className={styles.projectMeta}>
-                <div className={styles.metaItem}>
-                  <h4>Technologies Used</h4>
-                  <ul>
-                    <li>React</li>
-                    <li>D3.js</li>
-                    <li>Next.js</li>
-                    <li>CSS Modules</li>
-                  </ul>
+              <div className={styles.insightCard}>
+                <div className={styles.insightIcon}>
+                  <i className="fas fa-credit-card"></i>
                 </div>
-                
-                <div className={styles.metaItem}>
-                  <h4>Data Sources</h4>
-                  <ul>
-                    <li>U.S. Census Bureau</li>
-                    <li>Federal Reserve</li>
-                    <li>Consumer Financial Protection Bureau</li>
-                    <li>eMarketer Research</li>
-                  </ul>
+                <h3>Credit Card Impact</h3>
+                <p>Average monthly credit card spending has increased from $500 to over $5,000 as e-commerce has become more popular.</p>
+              </div>
+              
+              <div className={styles.insightCard}>
+                <div className={styles.insightIcon}>
+                  <i className="fas fa-shopping-cart"></i>
                 </div>
-                
-                <div className={styles.metaItem}>
-                  <h4>Timeline</h4>
-                  <p>Completed in Spring 2024</p>
+                <h3>Purchasing Frequency</h3>
+                <p>Consumers now make purchases 7x more frequently than before the e-commerce boom.</p>
+              </div>
+              
+              <div className={styles.insightCard}>
+                <div className={styles.insightIcon}>
+                  <i className="fas fa-virus"></i>
                 </div>
+                <h3>Pandemic Acceleration</h3>
+                <p>COVID-19 compressed approximately five years of e-commerce growth into just a few months.</p>
               </div>
             </div>
           </div>
         </section>
         
-        <section className="section" style={{ background: '#f8f9fa' }}>
-          <div className="container">
+        <section className={styles.visualizationSection}>
+          <div className={styles.container}>
             <h2 className={styles.sectionTitle}>Interactive Visualization</h2>
             <p className={styles.sectionDescription}>
               Explore the visualization below to see how e-commerce growth correlates with increased credit card spending.
-              Click on different years to see detailed information.
+              Click on different years to see detailed information. Hover over data points, milestones, and company markers for more insights.
             </p>
             
             <div className={styles.visualizationContainer}>
-              {/* Embed your existing E-commerce visualization component here */}
               <OverconsumptionViz />
             </div>
           </div>
         </section>
         
-        <section className="section">
-          <div className="container">
+        <section className={styles.takeawaysSection}>
+          <div className={styles.container}>
             <h2 className={styles.sectionTitle}>Key Takeaways</h2>
             <div className={styles.takeawaysGrid}>
               <div className={styles.takeawayCard}>
@@ -167,14 +141,14 @@ export default function DataVisualization() {
         </section>
         
         <section className={styles.ctaSection}>
-          <div className="container">
+          <div className={styles.container}>
             <h2>Ready to Become a More Mindful Digital Consumer?</h2>
             <p>Explore my other projects to learn more strategies for conscious online spending.</p>
             <div className={styles.ctaButtons}>
-              <Link href="/projects/ai-assistant" className="btn btn-primary">
+              <Link href="/projects/ai-assistant" className={styles.ctaButton}>
                 Explore AI Shopping Assistant
               </Link>
-              <Link href="/contact" className="btn btn-secondary">
+              <Link href="/contact" className={styles.ctaSecondary}>
                 Get in Touch
               </Link>
             </div>

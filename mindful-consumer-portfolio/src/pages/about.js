@@ -38,20 +38,17 @@ export default function About() {
                   className={styles.profileImg}
                 />
                 <div className={styles.socialLinks}>
-                  <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <a href="https://github.com/hehjunlim" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                     <i className="fab fa-github"></i>
                   </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/hehjun-lim/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <i className="fab fa-linkedin"></i>
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                    <i className="fab fa-twitter"></i>
                   </a>
                 </div>
               </div>
               
               <div className={styles.aboutContent}>
-                <h2>My Story</h2>
+                <h2>About Me</h2>
                 <p>
                   I've always been fascinated by the intersection of technology, psychology, and consumer behavior.
                   My journey began when I noticed my own online shopping habits changing dramatically with the rise

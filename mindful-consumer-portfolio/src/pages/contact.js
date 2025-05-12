@@ -79,7 +79,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3>Email</h3>
-                    <p>hello@mindfulconsumer.com</p>
+                    <p>hl62@njit.edu</p>
                   </div>
                 </div>
                 
@@ -109,9 +109,6 @@ export default function Contact() {
                   </a>
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                     <i className="fab fa-linkedin"></i>
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                    <i className="fab fa-twitter"></i>
                   </a>
                 </div>
               </div>
@@ -187,17 +184,6 @@ export default function Contact() {
           </div>
         </section>
         
-        {/* Using Scarcity Principle */}
-        <section className={styles.ctaSection}>
-          <div className="container">
-            <h2>Limited Availability for Consultations</h2>
-            <p>
-              I'm currently taking on a limited number of consulting clients for personalized
-              digital consumption guidance. Spots are filling up quickly for this quarter.
-            </p>
-            <button className="btn btn-primary">Book a Consultation</button>
-          </div>
-        </section>
       </main>
 
       <Footer />

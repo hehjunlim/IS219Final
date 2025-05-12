@@ -6,8 +6,17 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ShoppingAssistant from '../../components/ShoppingAssistant';
 import styles from '../../styles/Project.module.css';
+import ProjectHeader from '../../components/ProjectHeader';
 
 export default function AIAssistant() {
+    const projectData = {
+        title: "Mindful Shopping AI Assistant",
+        subtitle: "AI-powered tool that helps you evaluate whether an online purchase aligns with your values and budget.",
+        description: "The Mindful Shopping AI Assistant helps online shoppers evaluate potential purchases through a series of thoughtful questions. By considering factors like need, budget alignment, and long-term value, the assistant helps consumers make more intentional decisions and reduce impulsive spending.",
+        technologies: ["React", "Next.js", "JavaScript", "CSS Modules"],
+        dataSources: ["Behavioral Economics Research", "Consumer Psychology Studies", "Mindfulness Practices"],
+        timeline: "Completed in Spring 2024"
+      };
   return (
     <>
       <Head>
@@ -20,6 +29,7 @@ export default function AIAssistant() {
       <Navbar />
       
       <main>
+      <ProjectHeader {...projectData} />
         <section className={styles.projectHero}>
           <div className="container">
             <h1>Mindful Shopping AI Assistant</h1>

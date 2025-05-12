@@ -7,11 +7,13 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
+      <div className={styles.footerContainer}>
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Mindful Consumer</h3>
-            <p>Helping you make better digital consumption choices and live more intentionally online.</p>
+            <p className={styles.footerDescription}>
+              Helping you make better digital consumption choices and live more intentionally online.
+            </p>
           </div>
           
           <div className={styles.footerSection}>
@@ -35,8 +37,10 @@ const Footer = () => {
         </div>
         
         <div className={styles.footerBottom}>
-          <p>&copy; {currentYear} Mindful Consumer. All rights reserved.</p>
-          <div className={styles.socialLinks}>
+          <p className={styles.footerCopyright}>
+            &copy; {currentYear} Mindful Consumer. All rights reserved.
+          </p>
+          <div className={styles.footerSocialLinks}>
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <i className="fab fa-github"></i>
             </a>
