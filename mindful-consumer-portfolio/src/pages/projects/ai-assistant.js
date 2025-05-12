@@ -9,6 +9,7 @@ import Benefits from '../../components/Benefits';
 import Features from '../../components/Features';
 import styles from '../../styles/Project.module.css';
 import ProjectHeader from '../../components/ProjectHeader';
+import Testimonials from '../../components/Testimonials';
 
 export default function AIAssistant() {
     const projectData = {
@@ -71,15 +72,15 @@ export default function AIAssistant() {
             </Head>
 
             <Navbar />
-            
+
             <main>
                 <ProjectHeader {...projectData} />
-                
-                <Features 
+
+                <Features
                     title="How It Works"
                     features={assistantFeatures}
                 />
-                     
+
                 <section className="section" style={{ background: '#f8f9fa' }}>
                     <div className="container">
                         <h2 className={styles.sectionTitle}>Try the AI Assistant</h2>
@@ -87,52 +88,20 @@ export default function AIAssistant() {
                             Test the assistant below with a purchase you're considering. The more honest your answers,
                             the more helpful the assessment will be.
                         </p>
-                        
+
                         <ShoppingAssistant />
                     </div>
                 </section>
-                
-                <Benefits 
+
+                <Benefits
                     title="Key Benefits"
                     benefits={assistantBenefits}
                 />
-                
-                {/* Social proof - Cialdini principle */}
-                <section className="section" style={{ background: '#f1f9ff' }}>
-                    <div className="container">
-                        <h2 className={styles.sectionTitle}>User Experiences</h2>
-                        <div className={styles.testimonialsContainer}>
-                            <div className={styles.testimonialCard}>
-                                <div className={styles.quoteIcon}>
-                                    <i className="fas fa-quote-left"></i>
-                                </div>
-                                <p>
-                                    "I was surprised by how effectively this assistant helped me distinguish between wants and needs. 
-                                    Since I started using it, I've reduced my online impulse purchases by about 70%."
-                                </p>
-                                <div className={styles.testimonialAuthor}>
-                                    <p className={styles.authorName}>Michael L.</p>
-                                    <p>Saved $450 in 3 months</p>
-                                </div>
-                            </div>
-                            
-                            <div className={styles.testimonialCard}>
-                                <div className={styles.quoteIcon}>
-                                    <i className="fas fa-quote-left"></i>
-                                </div>
-                                <p>
-                                    "As someone who struggles with retail therapy, this tool has been like having a 
-                                    mindful friend who asks the right questions before I hit the buy button."
-                                </p>
-                                <div className={styles.testimonialAuthor}>
-                                    <p className={styles.authorName}>Jamie K.</p>
-                                    <p>Reduced credit card debt by 25%</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
+                {/* Social Proof Section - Cialdini principle */}
+                <Testimonials
+                    testimonialIds={[4, 5]}
+                    customTitle="User Experiences"
+                />
                 <section className={styles.ctaSection}>
                     <div className="container">
                         <h2>Ready to Transform Your Relationship with Online Shopping?</h2>
