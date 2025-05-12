@@ -5,11 +5,24 @@ import styles from '../styles/Navbar.module.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const router = useRouter();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    setIsDropdownOpen(false);
   };
+
+  const toggleDropdown = (e) => {
+    e.preventDefault();
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const projects = [
+    { name: "E-commerce Growth & Impact", path: "/projects/data-visualization" },
+    { name: "Mindful Shopping AI Assistant", path: "/projects/ai-assistant" },
+    { name: "Digital Wellbeing Tracker", path: "/projects/digital-wellbeing" }
+  ];
 
   return (
     <nav className={styles.navbar}>
@@ -43,14 +56,43 @@ const Navbar = () => {
               About
             </Link>
           </li>
-          <li className={styles.navbarItem}>
-            <Link 
-              href="/projects" 
+          <li className={`${styles.navbarItem} ${styles.dropdown}`}>
+            <div
               className={`${styles.navbarLink} ${router.pathname.startsWith('/projects') ? styles.active : ''}`}
-              onClick={() => setIsOpen(false)}
+              onClick={toggleDropdown}
+              style={{ cursor: 'pointer' }}
             >
               Projects
-            </Link>
+              <span className={styles.dropdownArrow}>▼</span>
+            </div>
+            <ul className={`${styles.dropdownMenu} ${isDropdownOpen ? styles.show : ''}`}>
+              <li>
+                <Link 
+                  href="/projects" 
+                  className={styles.dropdownLink}
+                  onClick={() => {
+                    setIsOpen(false);
+                    setIsDropdownOpen(false);
+                  }}
+                >
+                  All Projects
+                </Link>
+              </li>
+              {projects.map((project, index) => (
+                <li key={index}>
+                  <Link 
+                    href={project.path} 
+                    className={`${styles.dropdownLink} ${router.pathname === project.path ? styles.activeDropdown : ''}`}
+                    onClick={() => {
+                      setIsOpen(false);
+                      setIsDropdownOpen(false);
+                    }}
+                  >
+                    {project.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </li>
           <li className={styles.navbarItem}>
             <Link 
