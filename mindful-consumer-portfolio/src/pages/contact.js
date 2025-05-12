@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import styles from '../styles/Contact.module.css';
+import globalStyles from '../styles/Project.module.css';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,8 +17,11 @@ export default function Contact() {
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     success: false,
-    message: ''
+    message: '',
+    loading: false
   });
+
+  const [focusedField, setFocusedField] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,25 +31,36 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // In a real implementation, you'd send the form data to your backend or a service
-    // This is a simplified example
-    
+    // Show loading state
     setFormStatus({
-      submitted: true,
-      success: true,
-      message: 'Thank you for your message! I\'ll get back to you as soon as possible.'
+      submitted: false,
+      success: false,
+      message: '',
+      loading: true
     });
     
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+    // Simulate API call
+    setTimeout(() => {
+      setFormStatus({
+        submitted: true,
+        success: true,
+        message: 'Thank you for your message! I\'ll get back to you as soon as possible.',
+        loading: false
+      });
+      
+      // Reset form after submission
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      }, 3000);
+    }, 2000);
   };
 
   return (
@@ -59,7 +75,7 @@ export default function Contact() {
       <Navbar />
       
       <main>
-        <section className={styles.contactHero}>
+        <section className={globalStyles.projectHero || styles.contactHero}>
           <div className="container">
             <h1>Let's Connect</h1>
             <p>Interested in collaborating or have questions about mindful digital consumption? I'd love to hear from you.</p>
@@ -118,65 +134,107 @@ export default function Contact() {
                 
                 {formStatus.submitted && formStatus.success && (
                   <div className={styles.successMessage}>
+                    <i className="fas fa-check-circle"></i>
                     {formStatus.message}
                   </div>
                 )}
                 
-                <form onSubmit={handleSubmit}>
-                  <div className={styles.formGroup}>
-                    <label htmlFor="name">Your Name</label>
+                <form onSubmit={handleSubmit} className={styles.form}>
+                  <div className={`${styles.formGroup} ${focusedField === 'name' ? styles.focused : ''}`}>
+                    <label htmlFor="name" className={styles.formLabel}>
+                      <i className="fas fa-user"></i>
+                      Your Name
+                    </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
+                      onFocus={() => setFocusedField('name')}
+                      onBlur={() => setFocusedField('')}
                       required
                       className={styles.formControl}
+                      placeholder="John Doe"
                     />
                   </div>
                   
-                  <div className={styles.formGroup}>
-                    <label htmlFor="email">Email Address</label>
+                  <div className={`${styles.formGroup} ${focusedField === 'email' ? styles.focused : ''}`}>
+                    <label htmlFor="email" className={styles.formLabel}>
+                      <i className="fas fa-envelope"></i>
+                      Email Address
+                    </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
+                      onFocus={() => setFocusedField('email')}
+                      onBlur={() => setFocusedField('')}
                       required
                       className={styles.formControl}
+                      placeholder="john@example.com"
                     />
                   </div>
                   
-                  <div className={styles.formGroup}>
-                    <label htmlFor="subject">Subject</label>
+                  <div className={`${styles.formGroup} ${focusedField === 'subject' ? styles.focused : ''}`}>
+                    <label htmlFor="subject" className={styles.formLabel}>
+                      <i className="fas fa-tag"></i>
+                      Subject
+                    </label>
                     <input
                       type="text"
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
+                      onFocus={() => setFocusedField('subject')}
+                      onBlur={() => setFocusedField('')}
                       required
                       className={styles.formControl}
+                      placeholder="What's this about?"
                     />
                   </div>
                   
-                  <div className={styles.formGroup}>
-                    <label htmlFor="message">Your Message</label>
+                  <div className={`${styles.formGroup} ${focusedField === 'message' ? styles.focused : ''}`}>
+                    <label htmlFor="message" className={styles.formLabel}>
+                      <i className="fas fa-comment-alt"></i>
+                      Your Message
+                    </label>
                     <textarea
                       id="message"
                       name="message"
                       rows="6"
                       value={formData.message}
                       onChange={handleChange}
+                      onFocus={() => setFocusedField('message')}
+                      onBlur={() => setFocusedField('')}
                       required
                       className={styles.formControl}
+                      placeholder="Tell me about your project or question..."
                     ></textarea>
+                    <div className={styles.charCount}>
+                      {formData.message.length} / 500 characters
+                    </div>
                   </div>
                   
-                  <button type="submit" className="btn btn-primary">
-                    Send Message
+                  <button 
+                    type="submit" 
+                    className={`${styles.submitButton} ${formStatus.loading ? styles.loading : ''}`}
+                    disabled={formStatus.loading}
+                  >
+                    {formStatus.loading ? (
+                      <>
+                        <i className="fas fa-spinner fa-spin"></i>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <i className="fas fa-paper-plane"></i>
+                        Send Message
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
@@ -184,6 +242,21 @@ export default function Contact() {
           </div>
         </section>
         
+        {/* CTA Section */}
+        <section className={globalStyles.ctaSection || styles.ctaSection}>
+          <div className="container">
+            <h2>Looking for More Information?</h2>
+            <p>Explore my projects to learn more about mindful digital consumption.</p>
+            <div className={globalStyles.ctaButtons || styles.ctaButtons}>
+              <Link href="/projects" className={globalStyles.ctaButton || "btn btn-primary"}>
+                View Projects
+              </Link>
+              <Link href="/" className={globalStyles.ctaSecondary || "btn btn-secondary"}>
+                Back to Home
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
