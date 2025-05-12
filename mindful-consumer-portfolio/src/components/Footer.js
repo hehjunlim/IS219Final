@@ -29,9 +29,8 @@ const Footer = () => {
           <div className={styles.footerSection}>
             <h3 className={styles.footerTitle}>Free Resources</h3>
             <ul className={styles.footerLinks}>
-              <li><Link href="/resources/consumption-guide">Mindful Consumption Guide</Link></li>
-              <li><Link href="/resources/budget-template">Shopping Budget Template</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="https://www.fleurishcollective.com/mindful-shopping-guide/">Mindful Consumption Guide</Link></li>
+              <li><Link href="https://www.nerdwallet.com/article/finance/budget-worksheet">Shopping Budget Template</Link></li>
             </ul>
           </div>
         </div>
@@ -41,14 +40,11 @@ const Footer = () => {
             &copy; {currentYear} Mindful Consumer. All rights reserved.
           </p>
           <div className={styles.footerSocialLinks}>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://github.com/hehjunlim" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <i className="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/hehjun-lim/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i className="fab fa-linkedin"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <i className="fab fa-twitter"></i>
             </a>
           </div>
         </div>
