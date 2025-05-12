@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import ProjectHeader from '../../components/ProjectHeader';
 import OverconsumptionViz from '../../components/OverconsumptionViz';
+import Benefits from '../../components/Benefits';
 import styles from '../../styles/Project.module.css';
 
 export default function DataVisualization() {
@@ -21,6 +22,24 @@ export default function DataVisualization() {
     ],
     timeline: "Completed in Spring 2024"
   };
+
+  const keyTakeaways = [
+    {
+      icon: "fas fa-lightbulb",
+      heading: "Simplified Purchasing",
+      description: "E-commerce platforms have removed friction from the buying process, leading to more frequent and impulsive purchases."
+    },
+    {
+      icon: "fas fa-money-bill-wave",
+      heading: "Debt Correlation",
+      description: "The data shows a clear correlation between increased e-commerce activity and higher average credit card balances."
+    },
+    {
+      icon: "fas fa-balance-scale",
+      heading: "Mindfulness Opportunity",
+      description: "Understanding these patterns creates an opportunity for more mindful digital consumption decisions."
+    }
+  ];
 
   return (
     <>
@@ -89,56 +108,10 @@ export default function DataVisualization() {
           </div>
         </section>
         
-        <section className={styles.takeawaysSection}>
-          <div className={styles.container}>
-            <h2 className={styles.sectionTitle}>Key Takeaways</h2>
-            <div className={styles.takeawaysGrid}>
-              <div className={styles.takeawayCard}>
-                <div className={styles.takeawayIcon}>
-                  <i className="fas fa-lightbulb"></i>
-                </div>
-                <h3>Simplified Purchasing</h3>
-                <p>
-                  E-commerce platforms have removed friction from the buying process, 
-                  leading to more frequent and impulsive purchases.
-                </p>
-              </div>
-              
-              <div className={styles.takeawayCard}>
-                <div className={styles.takeawayIcon}>
-                  <i className="fas fa-money-bill-wave"></i>
-                </div>
-                <h3>Debt Correlation</h3>
-                <p>
-                  The data shows a clear correlation between increased e-commerce activity 
-                  and higher average credit card balances.
-                </p>
-              </div>
-              
-              <div className={styles.takeawayCard}>
-                <div className={styles.takeawayIcon}>
-                  <i className="fas fa-brain"></i>
-                </div>
-                <h3>Psychological Factors</h3>
-                <p>
-                  Digital payment methods create psychological distance from money, 
-                  making it easier to spend more than intended.
-                </p>
-              </div>
-              
-              <div className={styles.takeawayCard}>
-                <div className={styles.takeawayIcon}>
-                  <i className="fas fa-balance-scale"></i>
-                </div>
-                <h3>Mindfulness Opportunity</h3>
-                <p>
-                  Understanding these patterns creates an opportunity for more 
-                  mindful digital consumption decisions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Benefits 
+          title="Key Takeaways"
+          benefits={keyTakeaways}
+        />
         
         <section className={styles.ctaSection}>
           <div className={styles.container}>

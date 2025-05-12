@@ -67,13 +67,6 @@ export default function Home() {
             <h2 className={styles.homeSectionTitle}>Featured Projects</h2>
             <div className={styles.homeProjectsGrid}>
               <Link href="/projects/data-visualization" className={styles.homeProjectCard}>
-                <Image 
-                  src="/images/project1.jpg" 
-                  alt="E-commerce Growth & Impact Visualization" 
-                  width={400}
-                  height={200}
-                  className={styles.homeProjectCardImg}
-                />
                 <div className={styles.homeProjectCardBody}>
                   <h3 className={styles.homeProjectCardTitle}>E-commerce Growth & Impact</h3>
                   <p className={styles.homeProjectCardText}>
@@ -84,13 +77,6 @@ export default function Home() {
               </Link>
               
               <Link href="/projects/ai-assistant" className={styles.homeProjectCard}>
-                <Image 
-                  src="/images/project2.jpg" 
-                  alt="AI Shopping Assistant" 
-                  width={400}
-                  height={200}
-                  className={styles.homeProjectCardImg}
-                />
                 <div className={styles.homeProjectCardBody}>
                   <h3 className={styles.homeProjectCardTitle}>Mindful Shopping AI Assistant</h3>
                   <p className={styles.homeProjectCardText}>
@@ -101,13 +87,6 @@ export default function Home() {
               </Link>
               
               <Link href="/projects/digital-wellbeing" className={styles.homeProjectCard}>
-                <Image 
-                  src="/images/project3.jpg" 
-                  alt="Digital Wellbeing Tracker" 
-                  width={400}
-                  height={200}
-                  className={styles.homeProjectCardImg}
-                />
                 <div className={styles.homeProjectCardBody}>
                   <h3 className={styles.homeProjectCardTitle}>Digital Wellbeing Tracker</h3>
                   <p className={styles.homeProjectCardText}>

@@ -3,10 +3,39 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import Benefits from '../../components/Benefits';
 import styles from '../../styles/Project.module.css';
 import wellbeingStyles from '../../styles/Wellbeing.module.css';
+import ProjectHeader from '../../components/ProjectHeader';
 
 export default function DigitalWellbeing() {
+  const projectData = {
+    title: "Digital Wellbeing Tracker",
+    subtitle: "Track and visualize your online shopping habits to promote more mindful digital consumption.",
+    description: "The Digital Wellbeing Tracker helps you monitor and visualize your online shopping habits. By tracking patterns in your digital consumption, you can identify triggers, reduce impulsive spending, and develop more mindful shopping practices.",
+    technologies: ["React", "Chart.js", "LocalStorage API", "CSS Modules"],
+    dataSources: ["Habit Formation Psychology", "Digital Wellbeing Research", "Behavioral Economics"],
+    timeline: "Completed in Winter 2024"
+  };
+
+  const wellbeingBenefits = [
+    {
+      icon: "fas fa-eye",
+      heading: "Increased Awareness",
+      description: "Simply tracking your online shopping behaviors brings awareness to habits that might otherwise go unnoticed."
+    },
+    {
+      icon: "fas fa-chart-bar",
+      heading: "Pattern Recognition",
+      description: "Identify times, emotions, and triggers that lead to increased online shopping and impulsive purchases."
+    },
+    {
+      icon: "fas fa-hand-holding-usd",
+      heading: "Financial Control",
+      description: "Users report saving an average of 20-30% on discretionary spending after regularly using the tracker for 8 weeks."
+    }
+  ];
+
   // Simple state for the habit tracker demo
   const [habits, setHabits] = useState([
     { id: 1, name: 'Browse online stores without purpose', frequency: 5, spending: 75 },
@@ -65,25 +94,13 @@ export default function DigitalWellbeing() {
       <Navbar />
       
       <main>
-        <section className={styles.projectHero}>
-          <div className="container">
-            <h1>Digital Wellbeing Tracker</h1>
-            <p>Track and visualize your online shopping habits to promote more mindful digital consumption.</p>
-          </div>
-        </section>
+        <ProjectHeader {...projectData} />
         
         <section className="section">
           <div className="container">
             <div className={styles.projectInfo}>
               <div className={styles.projectDescription}>
-                <h2>Project Overview</h2>
-                <p>
-                  The Digital Wellbeing Tracker helps you monitor and visualize your online shopping habits.
-                  By tracking patterns in your digital consumption, you can identify triggers, reduce impulsive
-                  spending, and develop more mindful shopping practices.
-                </p>
-                
-                <h3>Key Features</h3>
+                <h2>Key Features</h2>
                 <ul className={styles.insightsList}>
                   <li>
                     <i className="fas fa-clipboard-list"></i>
@@ -114,32 +131,6 @@ export default function DigitalWellbeing() {
                     </div>
                   </li>
                 </ul>
-              </div>
-              
-              <div className={styles.projectMeta}>
-                <div className={styles.metaItem}>
-                  <h4>Technologies Used</h4>
-                  <ul>
-                    <li>React</li>
-                    <li>Chart.js</li>
-                    <li>LocalStorage API</li>
-                    <li>CSS Modules</li>
-                  </ul>
-                </div>
-                
-                <div className={styles.metaItem}>
-                  <h4>Research Basis</h4>
-                  <ul>
-                    <li>Habit Formation Psychology</li>
-                    <li>Digital Wellbeing Research</li>
-                    <li>Behavioral Economics</li>
-                  </ul>
-                </div>
-                
-                <div className={styles.metaItem}>
-                  <h4>Timeline</h4>
-                  <p>Completed in Winter 2024</p>
-                </div>
               </div>
             </div>
           </div>
@@ -229,103 +220,14 @@ export default function DigitalWellbeing() {
                   <li>Mobile app purchases account for a significant portion of your spending. Try deleting shopping apps from your phone.</li>
                 </ul>
               </div>
-              
-              <p className={wellbeingStyles.disclaimer}>
-                Note: This is a simplified demonstration. The full version includes detailed analytics, 
-                visualization charts, and personalized recommendations based on your specific patterns.
-              </p>
             </div>
           </div>
         </section>
         
-        <section className="section">
-          <div className="container">
-            <h2 className={styles.sectionTitle}>Benefits of Tracking Your Digital Consumption</h2>
-            <div className={styles.benefitsGrid}>
-              <div className={styles.benefitCard}>
-                <div className={styles.benefitIcon}>
-                  <i className="fas fa-eye"></i>
-                </div>
-                <h3>Increased Awareness</h3>
-                <p>
-                  Simply tracking your online shopping behaviors brings awareness to 
-                  habits that might otherwise go unnoticed.
-                </p>
-              </div>
-              
-              <div className={styles.benefitCard}>
-                <div className={styles.benefitIcon}>
-                  <i className="fas fa-chart-bar"></i>
-                </div>
-                <h3>Pattern Recognition</h3>
-                <p>
-                  Identify times, emotions, and triggers that lead to increased 
-                  online shopping and impulsive purchases.
-                </p>
-              </div>
-              
-              <div className={styles.benefitCard}>
-                <div className={styles.benefitIcon}>
-                  <i className="fas fa-hand-holding-usd"></i>
-                </div>
-                <h3>Financial Control</h3>
-                <p>
-                  Users report saving an average of 20-30% on discretionary 
-                  spending after regularly using the tracker for 8 weeks.
-                </p>
-              </div>
-              
-              <div className={styles.benefitCard}>
-                <div className={styles.benefitIcon}>
-                  <i className="fas fa-balance-scale"></i>
-                </div>
-                <h3>Value Alignment</h3>
-                <p>
-                  Ensure your spending behaviors align with your personal values 
-                  and financial goals rather than momentary impulses.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Scarcity - Cialdini principle */}
-        <section className="section" style={{ background: '#f1f9ff' }}>
-          <div className="container">
-            <div className={wellbeingStyles.offerBox}>
-              <div className={wellbeingStyles.offerContent}>
-                <h2>Limited Access: Full Version Beta Program</h2>
-                <p>
-                  I'm currently accepting a small group of beta testers for the full version of the 
-                  Digital Wellbeing Tracker. Beta testers get free lifetime access to all premium features
-                  and personalized consumption analysis.
-                </p>
-                <ul className={wellbeingStyles.offerBenefits}>
-                  <li>
-                    <i className="fas fa-check-circle"></i>
-                    <span>Advanced analytics dashboard with personalized insights</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-check-circle"></i>
-                    <span>Weekly progress reports and mindfulness tips</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-check-circle"></i>
-                    <span>Integration with budgeting tools and spending trackers</span>
-                  </li>
-                </ul>
-                <div className={wellbeingStyles.limitedSpots}>
-                  <p>Only 20 spots remaining in the beta program</p>
-                </div>
-              </div>
-              <div className={wellbeingStyles.offerCta}>
-                <Link href="/contact" className="btn btn-primary">
-                  Apply for Beta Access
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Benefits 
+          title="Benefits of Tracking Your Digital Consumption"
+          benefits={wellbeingBenefits}
+        />
         
         <section className={styles.ctaSection}>
           <div className="container">
