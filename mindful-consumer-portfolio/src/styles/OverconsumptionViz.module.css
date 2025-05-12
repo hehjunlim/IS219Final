@@ -33,6 +33,7 @@
     margin-top: 20px;
     width: 100%;
     overflow: visible;
+    padding-bottom: 40px; /* Added padding bottom */
   }
   
   .chart {
@@ -41,6 +42,7 @@
     width: 100%;
     position: relative;
     overflow: visible;
+    margin-bottom: 30px; /* Added margin bottom */
   }
   
   /* Chart controls */
@@ -58,9 +60,10 @@
     color: #666;
     line-height: 1.5;
     max-width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 40px auto; /* Increased bottom margin from 0 to 40px */
     text-align: center;
     font-style: italic;
+    padding-bottom: 20px; /* Added padding bottom */
   }
   
   .infoText p {
@@ -212,6 +215,10 @@
     .chart {
       height: 550px;
     }
+    
+    .chartContainer {
+      padding-bottom: 30px; /* Slightly reduced for mobile */
+    }
   }
   
   @media (max-width: 768px) {
@@ -221,6 +228,11 @@
     
     .chartSection h3 {
       font-size: 18px;
+    }
+    
+    .infoText {
+      margin-bottom: 30px; /* Slightly reduced for mobile */
+      padding-bottom: 15px;
     }
   }
   
@@ -232,5 +244,18 @@
     
     .infoPanelHeader {
       padding: 10px 15px;
+    }
+    
+    .chart {
+      margin-bottom: 20px; /* Reduced for mobile */
+    }
+    
+    .chartContainer {
+      padding-bottom: 20px; /* Reduced for mobile */
+    }
+    
+    .infoText {
+      margin-bottom: 25px; /* Reduced for mobile */
+      padding-bottom: 10px;
     }
   }

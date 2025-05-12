@@ -338,7 +338,6 @@ export const MarketShareChart = ({ onYearSelect }) => {
       .attr("text-anchor", "middle")
       .attr("font-size", "18px")
       .attr("font-weight", "bold")
-      .text("E-commerce Market Share of Total Retail Sales");
     
     // Add axis labels
     svg.append("text")
@@ -667,7 +666,6 @@ export const CompanyTimelineChart = ({ onYearSelect }) => {
       .attr("text-anchor", "middle")
       .attr("font-size", "18px")
       .attr("font-weight", "bold")
-      .text("E-commerce Company Timeline and Sales Growth");
     
     // Add axis labels
     svg.append("text")
@@ -905,7 +903,6 @@ export const CreditCardVizChart = ({ onYearSelect }) => {
       .attr("text-anchor", "middle")
       .attr("font-size", "18px")
       .attr("font-weight", "bold")
-      .text("Credit Card Spending & E-commerce Percentage");
     
     // Add axis labels
     svg.append("text")
@@ -991,17 +988,17 @@ export const OverconsumptionViz = () => {
   return (
     <div className={styles.dashboardContainer}>
       <div className={styles.chartSection}>
-        <h3>Market Share Growth</h3>
+        <h3>E-Commerce Market Share of Total Retail Sales</h3>
         <MarketShareChart onYearSelect={handleYearSelect} />
       </div>
       
       <div className={styles.chartSection}>
-        <h3>Company Timeline</h3>
+        <h3>E-Commerce Company Timeline and Sales Growth</h3>
         <CompanyTimelineChart onYearSelect={handleYearSelect} />
       </div>
       
       <div className={styles.chartSection}>
-        <h3>Credit Card Spending Impact</h3>
+        <h3>Credit Card Spending & E-Commerce Percentage</h3>
         <CreditCardVizChart onYearSelect={handleYearSelect} />
       </div>
       
