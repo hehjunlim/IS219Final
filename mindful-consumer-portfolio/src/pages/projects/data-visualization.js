@@ -59,11 +59,6 @@ export default function DataVisualization() {
       description: "The data shows a clear correlation between increased e-commerce activity and higher average credit card balances."
     },
     {
-      icon: "fas fa-brain",
-      heading: "Psychological Factors",
-      description: "Digital payment methods create psychological distance from money, making it easier to spend more than intended."
-    },
-    {
       icon: "fas fa-balance-scale",
       heading: "Mindfulness Opportunity",
       description: "Understanding these patterns creates an opportunity for more mindful digital consumption decisions."

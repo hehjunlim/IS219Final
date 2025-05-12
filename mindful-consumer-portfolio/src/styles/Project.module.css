@@ -282,3 +282,55 @@
     overflow: visible;
     position: relative;
   }
+
+  /* Add this to your existing Project.module.css */
+
+/* Icon display within the image container */
+.projectIconDisplay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e3f2fd 100%);
+    transition: all 0.5s ease;
+  }
+  
+  .projectIconDisplay i {
+    font-size: 5rem;
+    transition: transform 0.5s ease;
+  }
+  
+  .projectCard:hover .projectIconDisplay {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  }
+  
+  .projectCard:hover .projectIconDisplay i {
+    transform: scale(1.1);
+  }
+  
+  /* Specific icon backgrounds for each project type */
+  .projectCard:nth-child(1) .projectIconDisplay {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  }
+  
+  .projectCard:nth-child(2) .projectIconDisplay {
+    background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+  }
+  
+  .projectCard:nth-child(3) .projectIconDisplay {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+  }
+  
+  /* Responsive adjustments for icon size */
+  @media (max-width: 768px) {
+    .projectIconDisplay i {
+      font-size: 4rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .projectIconDisplay i {
+      font-size: 3.5rem;
+    }
+  }

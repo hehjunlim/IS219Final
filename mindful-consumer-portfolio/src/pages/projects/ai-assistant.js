@@ -55,11 +55,6 @@ export default function AIAssistant() {
             description: "Users report saving an average of $120 per month by avoiding unnecessary purchases after using the assistant."
         },
         {
-            icon: "fas fa-balance-scale",
-            heading: "Aligns Values & Actions",
-            description: "Helps ensure your spending decisions reflect your authentic values and priorities rather than momentary impulses."
-        },
-        {
             icon: "fas fa-heart",
             heading: "Increases Satisfaction",
             description: "People report greater long-term satisfaction with purchases made after thoughtful reflection rather than on impulse."

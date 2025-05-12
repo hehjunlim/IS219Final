@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 // The correct path to the CSS module
@@ -12,7 +11,8 @@ const projects = [
     id: 'data-visualization',
     title: 'E-commerce Growth & Impact',
     description: 'Interactive visualization showing how online shopping growth correlates with rising credit card debt.',
-    image: '/images/project1.jpg',
+    icon: 'fas fa-chart-line',
+    iconColor: '#4a90e2',
     technologies: ['React', 'D3.js', 'CSS'],
     details: 'Explore the relationship between e-commerce growth and increasing credit card debt through interactive charts and visualizations.'
   },
@@ -20,7 +20,8 @@ const projects = [
     id: 'ai-assistant',
     title: 'Mindful Shopping AI Assistant',
     description: 'AI-powered tool that helps you evaluate whether an online purchase aligns with your values and budget.',
-    image: '/images/project2.jpg',
+    icon: 'fas fa-robot',
+    iconColor: '#7c3aed',
     technologies: ['React', 'JavaScript', 'CSS Modules'],
     details: 'Use this conversational AI assistant to make more thoughtful decisions about online purchases and reduce impulse buying.'
   },
@@ -28,7 +29,8 @@ const projects = [
     id: 'digital-wellbeing',
     title: 'Digital Wellbeing Tracker',
     description: 'Tool to help track and visualize your online shopping habits and identify patterns for mindful consumption.',
-    image: '/images/project3.jpg',
+    icon: 'fas fa-chart-pie',
+    iconColor: '#10b981',
     technologies: ['React', 'Chart.js', 'LocalStorage API'],
     details: 'Track your online shopping habits and visualize patterns to develop more mindful digital consumption behaviors.'
   }
@@ -60,13 +62,9 @@ export default function Projects() {
               {projects.map((project) => (
                 <div key={project.id} className={styles.projectCard}>
                   <div className={styles.projectImageContainer}>
-                    <Image 
-                      src={project.image} 
-                      alt={project.title} 
-                      width={400}
-                      height={250}
-                      className={styles.projectImage}
-                    />
+                    <div className={styles.projectIconDisplay}>
+                      <i className={project.icon} style={{ color: project.iconColor }}></i>
+                    </div>
                   </div>
                   <div className={styles.projectContent}>
                     <h3 className={styles.projectTitle}>{project.title}</h3>
