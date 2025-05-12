@@ -68,6 +68,7 @@ const ShoppingAssistant = () => {
   const [isTyping, setIsTyping] = useState(false);
   
   const chatContainerRef = useRef(null);
+  const inputRef = useRef(null);
 
   // Add assistant's first question to chat history when component mounts
   useEffect(() => {
@@ -84,6 +85,11 @@ const ShoppingAssistant = () => {
         }
       ]);
       setIsTyping(false);
+      
+      // Auto-focus input after initial messages
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
     }, 1000);
     
     setIsTyping(true);
@@ -95,6 +101,13 @@ const ShoppingAssistant = () => {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [chatHistory]);
+
+  // Auto-focus input when typing is done
+  useEffect(() => {
+    if (!isTyping && !decision && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isTyping, decision]);
 
   const handleInputChange = (e) => {
     setCurrentResponse(e.target.value);
@@ -184,7 +197,20 @@ const ShoppingAssistant = () => {
         }
       ]);
       setIsTyping(false);
+      
+      // Auto-focus input for new conversation
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
     }, 1000);
+  };
+
+  // Handle Enter key for submit
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
   };
 
   return (
@@ -222,17 +248,22 @@ const ShoppingAssistant = () => {
       
       <form onSubmit={handleSubmit} className={styles.inputForm}>
         <input
+          ref={inputRef}
           type="text"
           value={currentResponse}
           onChange={handleInputChange}
-          placeholder="Type your response..."
+          onKeyPress={handleKeyPress}
+          placeholder={decision ? "Click 'Evaluate Another Purchase' to start a new evaluation" : "Type your response..."}
           className={styles.inputField}
           disabled={isTyping || decision !== null}
+          autoComplete="off"
+          autoFocus
         />
         <button 
           type="submit" 
           className={styles.sendButton}
           disabled={isTyping || decision !== null || !currentResponse.trim()}
+          aria-label="Send message"
         >
           <i className="fas fa-paper-plane"></i>
         </button>
@@ -240,10 +271,10 @@ const ShoppingAssistant = () => {
         {decision && (
           <button 
             type="button" 
-            className={styles.resetButton}
+            className={`${styles.resetButton} ${styles.pulseAnimation}`}
             onClick={resetAssistant}
           >
-            Evaluate Another Purchase
+            <i className="fas fa-redo-alt"></i> Evaluate Another Purchase
           </button>
         )}
       </form>

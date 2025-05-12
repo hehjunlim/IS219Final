@@ -89,13 +89,6 @@ export default function AIAssistant() {
                         </p>
                         
                         <ShoppingAssistant />
-                        
-                        <div className={styles.disclaimer}>
-                            <p>
-                                <strong>Note:</strong> This is a simplified demo version of the AI assistant. A more
-                                advanced version would incorporate machine learning to provide more personalized recommendations.
-                            </p>
-                        </div>
                     </div>
                 </section>
                 
